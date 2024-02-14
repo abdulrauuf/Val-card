@@ -13,6 +13,11 @@ let swiperThumbs = new Swiper(".gallery-thumbs", {
   centeredSlides: true,
   slideToClickedSlide: true,
 
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+
   pagination: {
     el: ".swiper-pagination",
     type: "fraction",
