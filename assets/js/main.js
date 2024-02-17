@@ -14,7 +14,7 @@ let swiperThumbs = new Swiper(".gallery-thumbs", {
   slideToClickedSlide: true,
 
   autoplay: {
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: false,
   },
 

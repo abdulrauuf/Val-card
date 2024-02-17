@@ -1,5 +1,5 @@
-/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Smooch&display=swap");
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Protest+Riot&display=swap');
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -8,9 +8,9 @@
   --first-color-light: hsl(34, 52%, 64%);
   --first-color-lighten: hsl(34, 52%, 68%);
   --black-color: hsl(0, 0%, 4%);
-  
+  --typewriterSpeed: 6s;
   /*========== Font and typography ==========*/
-  --body-font: 'Poppins', sans-serif;
+  --body-font: 'montserrat', sans-serif;
   --h3-font-size: 1rem;
   --small-font-size: .813rem;
   --smaller-font-size: .75rem;
@@ -35,12 +35,6 @@
 body {
   font-family: var(--body-font);
   background-color: var(--body-color);
-}
-
-h1{
-  font-size: 1.5rem;
-  font-family: "Smooch", cursive;
-  color: var(--black-color);
 }
 
 img {
@@ -213,27 +207,71 @@ img {
 }
 
 /* ANIMATION */
-.container{display: inline-block;}
+.sub{display: inline-block;}
 
-.text {
-  font-size: 1em;
-  letter-spacing: 2px;
-  font-family: var(--body-font);
-  /* border-right: 1px solid; */
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  animation:  
-           typing 4s ,
-           cursor .4s step-end infinite alternate;
+h1{
+   color: hsla(0, 33%, 17%, 0.7) ;
+  font-size: 1.5rem;
+  position: relative;
+  font-family: "Protest Riot", sans-serif;
+  /* outline: 2px solid var(--first-color-lighten); */
+  position: relative;
+  width: max-content;
 }
 
-@keyframes cursor {
-  50% { border-color: transparent }
+h1::before,
+h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-@keyframes typing {
-  from {width: 0 }
+h1::before{
+  background: var(--first-color);
+  animation: typewriter var(--typewriterSpeed)  1s
+  forwards;
+}
+
+h1::after{
+  width: 0.125em;
+  background: var(--first-color);
+    animation: 
+    typewriter var(--typewriterSpeed)  1s
+     forwards,
+      blink 750ms  infinite;
+}
+
+.subtitle{
+  color: hsla(0, 33%, 17%, 0.7) ;
+  font-family: "Pacifico", cursive;
+  font-size: 1.1rem;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease 
+  calc(var(--typewriterSpeed) + 1s)   forwards;
+}
+
+@keyframes typewriter {
+  to { 
+    left: 100%; 
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes fadeInUp {
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*=============== BREAKPOINTS ===============*/
